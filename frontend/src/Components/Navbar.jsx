@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import Logo from "../assets/Logo2.png";
 import { Menu, X } from "lucide-react";
-
+import resume from "../assets/inderjeet.pdf";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Home", link: "#home" },
-    { name: "About", link: "#about" },
     { name: "Skills", link: "#skills" },
     { name: "Projects", link: "#projects" },
     { name: "Contact", link: "#contact" },
@@ -36,7 +35,7 @@ const Navbar = () => {
 
           {/* Download CV */}
           <a
-            href="/resume.pdf"
+            href={resume}
             download
             className="px-4 py-2 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold shadow-md hover:scale-105 transition-transform duration-300"
           >
@@ -69,7 +68,7 @@ const Navbar = () => {
 
           {/* Mobile CV Button */}
           <a
-            href="/resume.pdf"
+            href={resume}
             download
             className="block text-center px-5 py-2 rounded-lg bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
           >
