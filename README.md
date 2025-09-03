@@ -3,7 +3,7 @@
 Welcome to my **personal portfolio website** built with **React.js** and **Tailwind CSS**!  
 This project showcases my skills, projects, and experience as a **Full Stack Developer** and problem solver.  
 
-🔗 **Live Demo:** [URL](#)  
+🔗 **Live Demo:** [[URL](https://resilient-meringue-023d1b.netlify.app/)](#)  
 
 ---
 
