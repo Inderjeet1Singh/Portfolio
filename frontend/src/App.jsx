@@ -6,7 +6,7 @@ import Skills from "./Components/Skills";
 import "./index.css";
 function App() {
   return (
-    <div className="flex flex-col  bg-gradient-to-br from-black via-gray-900 to-black to-black">
+    <div className="flex flex-col  bg-gradient-to-br from-black via-gray-900 to-black ">
       <Navbar />
       <HeroSection />
       <Skills />
