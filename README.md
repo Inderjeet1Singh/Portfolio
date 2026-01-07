@@ -22,7 +22,9 @@ This project showcases my skills, projects, profiles, and experience as a **Full
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![ExpressJS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-2C9F46?style=for-the-badge&logo=nodemailer&logoColor=white)
 - **Frontend:** React.js, Tailwind CSS  
 - **Icons & UI:** React Icons, Lucide Icons  
 - **Backend (Contact Form):** Node.js, Express, Nodemailer  
