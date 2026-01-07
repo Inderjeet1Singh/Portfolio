@@ -2,8 +2,8 @@ import React from "react";
 import { ArrowDownToLine, Send } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import { FaYoutube } from "react-icons/fa";
-import image from "../assets/inderjeet.jpg";
-import resume from "../assets/inderjeet.pdf";
+import image from "../assets/HeroSectionImage/inderjeet.jpg";
+import resume from "../assets/Resume/inderjeet.pdf";
 
 const HeroSection = () => {
   return (

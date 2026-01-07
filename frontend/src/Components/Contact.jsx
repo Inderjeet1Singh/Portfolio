@@ -7,24 +7,42 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const mailtoLink = `mailto:inderjeet2023mnnit@gmail.com?subject=Message from ${encodeURIComponent(
-      formData.name
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // reset form
+      } else {
+        alert("Something went wrong. Try again.");
+      }
+    } catch (err) {
+      alert("Server error — try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section className="w-full py-16" id="contact">
       <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row gap-12">
-        {/* Text / Info Section */}
         <div className="lg:w-1/2 text-white">
           <h2 className="text-4xl font-bold mb-6">Contact</h2>
           <p className="text-gray-300 mb-4">
@@ -36,7 +54,6 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Form Section */}
         <form onSubmit={handleSubmit} className="lg:w-1/2 flex flex-col gap-5">
           <input
             type="text"
@@ -45,8 +62,10 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+            disabled={loading}
+            className="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full disabled:opacity-60"
           />
+
           <input
             type="email"
             name="email"
@@ -54,8 +73,10 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+            disabled={loading}
+            className="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full disabled:opacity-60"
           />
+
           <textarea
             name="message"
             placeholder="Your Message"
@@ -63,13 +84,16 @@ const Contact = () => {
             onChange={handleChange}
             required
             rows="6"
-            className="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full resize-none"
+            disabled={loading}
+            className="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full resize-none disabled:opacity-60"
           ></textarea>
+
           <button
             type="submit"
-            className="bg-blue-500 text-white py-4 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
+            disabled={loading}
+            className="bg-blue-500 text-white py-4 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

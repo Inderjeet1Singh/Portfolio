@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import Logo from "../assets/Logo2.png";
+import Logo from "../assets/Logo/Logo2.png";
 import { Menu, X } from "lucide-react";
-import resume from "../assets/inderjeet.pdf";
+import resume from "../assets/Resume/inderjeet.pdf";
+import { navItems } from "../Data/Data.js";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = [
-    { name: "Home", link: "#home" },
-    { name: "Skills", link: "#skills" },
-    { name: "Projects", link: "#projects" },
-    { name: "Contact", link: "#contact" },
-  ];
-
   return (
     <nav className="bg-gray-900/90 backdrop-blur-md fixed w-full z-50 top-0 left-0 border-b border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">

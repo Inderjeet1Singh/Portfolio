@@ -1,6 +1,7 @@
 import Contact from "./Components/Contact";
 import HeroSection from "./Components/HeroSection";
 import Navbar from "./Components/Navbar";
+import Profiles from "./Components/Profiles";
 import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 import "./index.css";
@@ -11,6 +12,7 @@ function App() {
       <HeroSection />
       <Skills />
       <Projects />
+      <Profiles />
       <Contact />
     </div>
   );

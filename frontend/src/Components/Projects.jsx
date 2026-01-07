@@ -1,35 +1,5 @@
 import React from "react";
-import OpenHammerPro from "../assets/OpenHammerPro.jpg";
-import CureNowPro from "../assets/CureNowPro.jpg";
-import PortFolioPro from "../assets/PortFolioPro.jpg";
-
-const projectsData = [
-  {
-    title: "Doctor Appointment Booking System",
-    description:
-      "A full-stack doctor appointment booking system built with React, Node.js, and MongoDB.",
-    image: CureNowPro,
-    github: "https://github.com/Inderjeet1Singh/CureNow",
-    live: "https://curenow.netlify.app/",
-  },
-  {
-    title: "Online Auction Platform",
-    description:
-      "An online auction platform allowing users to bid on products in real-time, built with React and Node.js.",
-    image: OpenHammerPro,
-    github: "https://github.com/Open-Hammer/OpenHammer",
-    live: "https://github.com/Open-Hammer/OpenHammer",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website showcasing my projects and skills, built using React and Tailwind CSS.",
-    image: PortFolioPro,
-    github: "https://github.com/Inderjeet1Singh/Portfolio",
-    live: "https://github.com/Inderjeet1Singh/Portfolio",
-  },
-];
-
+import { projectsData } from "../Data/Data.js";
 const Projects = () => {
   return (
     <section className="py-12 " id="projects">
