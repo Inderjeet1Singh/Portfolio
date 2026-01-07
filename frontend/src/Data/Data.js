@@ -47,7 +47,7 @@ export const projectsData = [
       "A full-stack doctor appointment booking system built with React, Node.js, and MongoDB.",
     image: CureNowPro,
     github: "https://github.com/Inderjeet1Singh/CureNow",
-    live: "https://itscurenow.netlify.app/",
+    live: "https://curenow.netlify.app/",
   },
   {
     title: "Online Auction Platform",
@@ -55,7 +55,7 @@ export const projectsData = [
       "An online auction platform allowing users to bid on products in real-time, built with React and Node.js.",
     image: OpenHammerPro,
     github: "https://github.com/Open-Hammer/OpenHammer",
-    live: "https://github.com/Open-Hammer/OpenHammer",
+    live: "https://openhammer-online-auction-website.onrender.com/",
   },
   {
     title: "Portfolio Website",
@@ -63,7 +63,7 @@ export const projectsData = [
       "A personal portfolio website showcasing my projects and skills, built using React and Tailwind CSS.",
     image: PortFolioPro,
     github: "https://github.com/Inderjeet1Singh/Portfolio",
-    live: "https://github.com/Inderjeet1Singh/Portfolio",
+    live: "https://inderjeetsportfolio.onrender.com/",
   },
 ];
 export const profiles = [
