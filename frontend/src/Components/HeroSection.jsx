@@ -4,7 +4,6 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaYoutube } from "react-icons/fa";
 import image from "../assets/HeroSectionImage/Inderjeet.jpg";
 import resume from "../assets/Resume/Inderjeet.pdf";
-
 const HeroSection = () => {
   return (
     <section
