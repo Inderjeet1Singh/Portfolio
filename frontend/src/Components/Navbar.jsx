@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/Logo/Logo2.png";
 import { Menu, X } from "lucide-react";
-import resume from "../assets/Resume/Inderjeet.pdf";
+import resume from "../assets/Resume/Inderjeet1.pdf";
 import { navItems } from "../Data/Data.js";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
