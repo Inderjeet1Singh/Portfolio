@@ -1,25 +1,28 @@
-import { transporter } from "../config/mailer.js";
+import { resend } from "../config/resend.js";
 
 export const contactController = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    await transporter.sendMail({
-      from: email,
-      to: process.env.EMAIL_USER,
+    if (!name || !email || !message) {
+      return res.status(400).json({ success: false });
+    }
+    await resend.emails.send({
+      from: "Portfolio <onboarding@resend.dev>",
+      to: process.env.OWNER_EMAIL,
       subject: `Portfolio message from ${name}`,
-      text: `
-Name: ${name}
-Email: ${email}
-
-Message:
-${message}
+      html: `
+        <h3>New Contact Message</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
       `,
     });
 
     res.json({ success: true });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error("Resend error:", error);
     res.status(500).json({ success: false });
   }
 };
