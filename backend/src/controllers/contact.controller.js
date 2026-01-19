@@ -8,7 +8,7 @@ export const contactController = async (req, res) => {
       return res.status(400).json({ success: false });
     }
     await resend.emails.send({
-      from: `${name} ${email}`,
+      from: `${name} <onboarding@resend.dev>`,
       to: process.env.OWNER_EMAIL,
       subject: `Portfolio message from ${name}`,
       html: `
